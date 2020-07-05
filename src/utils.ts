@@ -5,27 +5,16 @@
  * @Last Modified time: 2020-07-03 13:59:57
  */
 
-import type { IActorsFactory, IStore, Combine } from './helper';
+import type { IStore, Combine } from './helper';
 import { initStateMap } from './init-state';
 
-/**
- * 创建 actorsFactory
- */
-export function createActorsFactory<S extends object[]>(...defaultStates: S) {
-  // @ts-ignore
-  return function<A extends any>(actorsFactory: IActorsFactory<S, A>) {
-    initStateMap.set(actorsFactory, Object.assign({}, ...defaultStates));
-    return actorsFactory;
-  }
-}
-
-export function createActorsFactory2<S extends object[], AF extends (store: IStore<Combine<S[number]>>) => any>(defaultStates: S, actorsFactory: AF): AF;
-export function createActorsFactory2<S extends object, AF extends (store: IStore<S>) => any>(defaultStates: S, actorsFactory: AF): AF;
+export function createActorsFactory<S extends object[], AF extends (store: IStore<Combine<S[number]>>) => any>(defaultStates: S, actorsFactory: AF): AF;
+export function createActorsFactory<S extends object, AF extends (store: IStore<S>) => any>(defaultStates: S, actorsFactory: AF): AF;
 
 /**
  * 创建 actorsFactory
  */
-export function createActorsFactory2(
+export function createActorsFactory(
   defaultStates,
   actorsFactory
 ) {
