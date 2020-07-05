@@ -6,9 +6,13 @@ docs
 examples
 src
 
+# source map
+dist/**/*.map
+
 # config
 .vscode
 .editorconfig
+tsconfig.json
 
 # incremental
 tsBuildInfoFile.json
