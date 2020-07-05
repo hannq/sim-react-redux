@@ -5,7 +5,7 @@
  * @Last Modified time: 2020-06-05 10:47:30
  */
 import type { Store, StoreEnhancer } from 'redux';
-import type { IActorsFactory, IFillParam, PlunkStateFromStore, PlunkParam1 } from './helper.d';
+import type { IActorsFactory, IFillParam, PlunkStateFromStore, PlunkParam1 } from './helper';
 import { createStore as reduxCreateStore } from 'redux';
 import { initStateMap } from './init-state';
 import { unionReducer } from './utils';

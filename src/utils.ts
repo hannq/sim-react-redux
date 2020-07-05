@@ -5,7 +5,7 @@
  * @Last Modified time: 2020-07-03 13:59:57
  */
 
-import type { IActorsFactory, IStore, Combine } from './helper.d';
+import type { IActorsFactory, IStore, Combine } from './helper';
 import { initStateMap } from './init-state';
 
 /**

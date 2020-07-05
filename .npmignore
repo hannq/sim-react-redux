@@ -1,0 +1,14 @@
+# dep
+node_modules
+
+# source
+docs
+examples
+src
+
+# config
+.vscode
+.editorconfig
+
+# incremental
+tsBuildInfoFile.json

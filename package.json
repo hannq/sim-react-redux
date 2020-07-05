@@ -1,0 +1,41 @@
+{
+  "name": "sim-react-redux",
+  "version": "1.0.0",
+  "description": "简化版的 react-redux ！",
+  "docs": "https://hannq.github.io/sim-react-redux/",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "peerDependencies": {
+    "react-redux": "7.x",
+    "redux": "4.x",
+    "react": "16.x"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/react": "^16.9.41",
+    "@types/react-redux": "^7.1.9",
+    "@types/redux": "^3.6.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.9.6"
+  },
+  "scripts": {
+    "clean": "rimraf -rf ./dist ./tsBuildInfoFile.json",
+    "dev": "npm run clean && tsc -w",
+    "build": "npm run clean && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hannq/sim-react-redux.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hannq/sim-react-redux/issues"
+  },
+  "homepage": "https://github.com/hannq/sim-react-redux#readme"
+}

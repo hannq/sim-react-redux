@@ -5,7 +5,7 @@
  * @Last Modified time: 2020-06-04 23:59:58
  */
 
-import type { IFillParam, PlunkStateFromStore, PlunkParam1 } from '../helper.d';
+import type { IFillParam, PlunkStateFromStore, PlunkParam1 } from '../helper';
 import { useSelector } from 'react-redux';
 
 interface CreateSelectorHook {

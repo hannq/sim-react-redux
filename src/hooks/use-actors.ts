@@ -5,11 +5,10 @@
  * @Last Modified time: 2020-06-05 10:52:10
  */
 
-import type { IFillReturn } from '../helper.d';
-import { /** useContext, */ useMemo } from 'react';
+import type { IFillReturn } from '../helper';
+import { useMemo } from 'react';
 import { useStore, useDispatch } from 'react-redux';
 import { initStateMap } from '../init-state';
-// import { simReactReduxContext } from '../components/context';
 
 interface ICreateActorsHook {
   <R>(actorsFactory: IFillReturn<R>): IUseActors<R>;
