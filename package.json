@@ -1,9 +1,10 @@
 {
   "name": "sim-react-redux",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "简化版的 react-redux ！",
   "docs": "https://hannq.github.io/sim-react-redux/",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "directories": {
     "doc": "docs",
     "example": "examples"
@@ -31,7 +32,7 @@
     "url": "git+https://github.com/hannq/sim-react-redux.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "kage336",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/hannq/sim-react-redux/issues"

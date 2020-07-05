@@ -1,7 +1,7 @@
 # sim-react-redux
 > 简化版的 react-redux ！
 
-### 由于个人精力有限，目前文档较为简陋，可以在点击 [详细文档地址](https://hannq.github.io/sim-react-redux/) 尝试在线编辑
+### 由于个人精力有限，目前文档较为简陋，可以在点击 [详细文档地址](https://hannq.github.io/sim-react-redux/) 尝试在线编辑。
 
 ## 特点&目标
 

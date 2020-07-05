@@ -27,7 +27,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "replace": "rimraf node_modules/sim-react-redux && sh ./replace.sh",
-    "postinstall123": "npm run replace"
+    "postinstall": "npm run replace"
   },
   "eslintConfig": {
     "extends": "react-app"
