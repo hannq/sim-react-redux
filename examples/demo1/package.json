@@ -26,8 +26,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "replace": "rimraf node_modules/sim-react-redux && sh ./replace.sh",
-    "postinstall": "npm run replace"
+    "replace": "rimraf node_modules/sim-react-redux && sh ./replace.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
