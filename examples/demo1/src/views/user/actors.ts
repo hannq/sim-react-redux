@@ -8,7 +8,7 @@
 import state from "./state";
 import { createActorsFactory } from "sim-react-redux";
 
-export default createActorsFactory(state, store => ({
+const asdf = createActorsFactory(state, store => ({
   /**
    * 把 count1 +1
    */
@@ -28,3 +28,5 @@ export default createActorsFactory(state, store => ({
     };
   }
 }));
+
+export default asdf

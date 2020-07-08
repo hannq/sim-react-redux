@@ -5,11 +5,11 @@
  * @Last Modified time: 2020-07-03 13:59:57
  */
 
-import type { IActorsFactory } from './helper';
+import type { IActorsFactory, IActorsFactoryEX } from './helper';
 import { initStateMap } from './init-state';
 
-export function createActorsFactory<S extends object[], AF extends IActorsFactory<S>>(defaultStates: S, actorsFactory: AF): AF;
-export function createActorsFactory<S extends object, AF extends IActorsFactory<[S]>>(defaultStates: S, actorsFactory: AF): AF;
+export function createActorsFactory<S extends object[], AF extends IActorsFactory<S>>(defaultStates: S, actorsFactory: AF): IActorsFactoryEX<S, AF>;
+export function createActorsFactory<S extends object, AF extends IActorsFactory<[S]>>(defaultStates: S, actorsFactory: AF): IActorsFactoryEX<[S], AF>;
 
 /**
  * 创建 actorsFactory

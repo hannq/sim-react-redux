@@ -1,6 +1,6 @@
 {
   "name": "sim-react-redux",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "简化版的 react-redux ！",
   "docs": "https://hannq.github.io/sim-react-redux/",
   "main": "dist/index.js",

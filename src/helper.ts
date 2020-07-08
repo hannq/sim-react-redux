@@ -31,16 +31,14 @@ export interface IStore<S> {
   getState(): S;
 }
 
-// export interface IActorsFactory<S extends any[], A extends { [x: string]: () => void }> {
-//   (store: IStore<Combine<S[any]>>): Readonly<{
-//     [K in keyof A]: IAct<Parameters<A[K]>, Combine<S[any]>>
-//   } & { reset?(): Promise<Partial<Combine<S[any]>>> }>;
-// }
-
 export interface IActorsFactory<S extends any[]> {
   (store: IStore<Combine<S[any]>>): Readonly<{
     [x: string]: (...args: any[]) => Promise<Partial<Combine<S[any]>>>
-  } & { reset?(): Promise<Partial<Combine<S[any]>>> }>;
+  }>;
+}
+
+export interface IActorsFactoryEX<S extends any[], AF extends IActorsFactory<S>> {
+  (store: IStore<Combine<S[any]>>): (ReturnType<AF> & { reset?(): Promise<Partial<Combine<S[any]>>> })
 }
 
 export interface IAct<P extends any[], R> {
