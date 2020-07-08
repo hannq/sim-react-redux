@@ -29,7 +29,7 @@ export const createStore: CreateStore = (
     const initState = initStateMap.get(actorsFactory);
     return reduxCreateStore(unionReducer, initState, enhancer);
   } else {
-    const actorsfactories: { [K: string]: IActorsFactory<any, any> } = actorsFactory;
+    const actorsfactories: { [K: string]: IActorsFactory<any> } = actorsFactory;
     const initState = Object.entries(actorsfactories).reduce((acc, [namespace, actorsFactory]) => {
       acc[namespace] = initStateMap.get(actorsFactory);
       return acc;

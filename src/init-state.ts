@@ -6,4 +6,4 @@
  */
 import type { IActorsFactory } from './helper';
 
-export const initStateMap = new Map<IActorsFactory<any, any>, object>();
+export const initStateMap = new Map<IActorsFactory<any>, object>();

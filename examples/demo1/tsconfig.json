@@ -12,6 +12,7 @@
     "allowSyntheticDefaultImports": true,
     "strict": false,
     "strictNullChecks": false,
+    "noImplicitThis": true,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "node",

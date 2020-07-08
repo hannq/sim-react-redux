@@ -24,7 +24,7 @@ export default createActorsFactory(state, store => ({
   async addCount2() {
     const { count2 } = store.getState();
     return {
-      count2: count2 + 1
+      count2: count2 + 1,
     };
   }
 }));
