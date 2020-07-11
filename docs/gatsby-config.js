@@ -7,6 +7,10 @@ module.exports = {
     author: `NianQi Han`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-antd',
+      options: { style: true }
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-transformer-remark`,
@@ -25,7 +29,7 @@ module.exports = {
           `gatsby-remark-graph`,
           {
             resolve: `gatsby-remark-images`,
-            options: { },
+            options: {},
           },
           {
             resolve: `gatsby-remark-prismjs`,
@@ -124,8 +128,16 @@ module.exports = {
       },
     },
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-less`,
-    `gatsby-plugin-sass`
+    {
+      resolve: `gatsby-plugin-less`,
+      options: {
+        lessOptions: { // 如果使用less-loader@5，请移除 lessOptions 这一级直接配置选项。
+          modifyVars: { },
+          javascriptEnabled: true,
+        },
+      }
+    },
+    `gatsby-plugin-sass`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
