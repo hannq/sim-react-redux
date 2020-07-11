@@ -1,10 +1,13 @@
 // @ts-check
+const { name } = require('../package.json');
+const PATH_PREFIX = process.env.RUNTIME_ENV === 'build' ? `/${name}` : '';
 
 module.exports = {
+  pathPrefix: PATH_PREFIX,
   siteMetadata: {
-    title: `NianQi Han's Blog`,
-    description: `This is my tec blog`,
-    author: `NianQi Han`,
+    title: `Sim React Redux`,
+    description: `简化版的 React Redux 咯 ~`,
+    author: `hannq`,
   },
   plugins: [
     {
