@@ -1,0 +1,53 @@
+name: Publish Gatsby Blog
+
+on:
+  push:
+    branches:
+      - pure-tpl
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - uses: actions/checkout@v1
+    - run: |
+        git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
+        git checkout pure-tpl
+    # - name: checkout branch
+    #   run: |
+    #     git checkout pure-tpl
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install, build
+      run: |
+        npm install
+        npm run build
+    - name: replace master
+      env:
+        USER_EMAIL: ${{ secrets.USER_EMAIL }}
+        USER_NAME: ${{ secrets.USER_NAME }}
+        REMOTE_ORIGIN_URL: https://${{ secrets.USER_NAME }}:${{ secrets.PASSPORD }}@github.com/hannq/hannq.github.io.git
+      run: |
+        git config --global user.email $USER_EMAIL
+        git config --global user.name $USER_NAME
+        git checkout master
+        npm install
+        npm run clean
+        git add .
+        cp -r ./public/* ./
+        git add .
+        git commit -m 'update new page'
+        git push $REMOTE_ORIGIN_URL
+    # steps:
+    #   - name: Build the site in the jekyll/builder container
+    #     run: |
+    #       docker run \
+    #       -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+    #       jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
+

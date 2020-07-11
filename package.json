@@ -32,8 +32,8 @@
     "url": "git+https://github.com/hannq/sim-react-redux.git"
   },
   "keywords": [],
-  "author": "kage336",
-  "license": "ISC",
+  "author": "hannq",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/hannq/sim-react-redux/issues"
   },
