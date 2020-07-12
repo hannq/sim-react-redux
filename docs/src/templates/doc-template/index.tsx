@@ -3,11 +3,12 @@ import { graphql } from 'gatsby';
 import SEO from '../../components/seo';
 import Header from './components/header';
 import Footer from './components/footer';
-import SideBar from './components/side-bar';
+import SideBar, { IProps as ISideBarProps } from './components/side-bar';
 import '@primer/css/core/index.scss';
 import styles from './index.module.less';
+import Content from './components/content';
 
-interface IPathContext {
+interface IPathContext extends ISideBarProps {
   /** 当前页面的内容 */
   content: string;
 }
@@ -20,18 +21,20 @@ interface IProps {
 }
 
 const IndexPage: React.SFC<IProps> = (props) => {
-  const { data, pathContext: {
-    content
+  const { pathContext: {
+    content,
+    currentPath,
+    menuList
   } } = props;
   return (
     <>
       <SEO title="博客首页" />
       <Header />
-      <SideBar />
-      <article
-        className={styles.contentWrappper}
-        dangerouslySetInnerHTML={{ __html: content }}
-      ></article>
+      <SideBar
+        currentPath={currentPath}
+        menuList={menuList}
+      />
+      <Content content={content} />
       <Footer />
     </>
   )

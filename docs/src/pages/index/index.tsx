@@ -3,18 +3,18 @@ import SEO from '../../components/seo';
 import Header from './components/header';
 import Content from './components/content';
 import Footer from './components/footer';
-import './index.module.less';
+import styles from './index.module.less';
 
 interface IProps { }
 
 const IndexPage: React.SFC<IProps> = () => {
   return (
-    <>
-      <SEO title="Sim React Redux" />
+    <div className={styles.wrapper}>
+      <SEO title="首页" />
       <Header />
       <Content />
       <Footer />
-    </>
+    </div>
   )
 }
 
