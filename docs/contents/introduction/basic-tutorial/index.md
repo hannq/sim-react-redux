@@ -1,7 +1,7 @@
 ---
 order: 2
-groupName: "使用介绍"
-name: "基本导航"
+groupName: "介绍"
+name: "基本用法"
 ---
 
 # basic-tutorial
