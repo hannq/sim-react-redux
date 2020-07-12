@@ -1,16 +1,18 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import SEO from '../../components/seo';
 import Header from './components/header';
 import Footer from './components/footer';
 import SideBar, { IProps as ISideBarProps } from './components/side-bar';
+import Content, { IAnchorLink } from './components/content';
 import '@primer/css/core/index.scss';
+import 'prismjs/themes/prism.css';
 import styles from './index.module.less';
-import Content from './components/content';
 
 interface IPathContext extends ISideBarProps {
   /** 当前页面的内容 */
   content: string;
+  /** 锚点列表 */
+  anchorList: IAnchorLink[];
 }
 
 interface IProps {
@@ -24,6 +26,7 @@ const IndexPage: React.SFC<IProps> = (props) => {
   const { pathContext: {
     content,
     currentPath,
+    anchorList,
     menuList
   } } = props;
   return (
@@ -34,7 +37,10 @@ const IndexPage: React.SFC<IProps> = (props) => {
         currentPath={currentPath}
         menuList={menuList}
       />
-      <Content content={content} />
+      <Content
+        anchorList={anchorList}
+        content={content}
+      />
       <Footer />
     </>
   )

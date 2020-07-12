@@ -58,6 +58,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             name
             groupName
           }
+          headings {
+            depth
+            value
+            id
+          }
         }
       }
     }
@@ -69,6 +74,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
   const totalPages = result.data.allMarkdownRemark.nodes.map(({
     frontmatter,
+    headings,
     fileAbsolutePath,
     html
   }) => {
@@ -79,6 +85,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       content: html,
       path: `/${itemGroupName}/${itemName}`,
       groupName: frontmatter.groupName,
+      anchorList: headings,
       name: frontmatter.name
     }
   });
@@ -88,12 +95,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   totalPages.forEach(({
     content,
     path,
+    anchorList,
   }) => {
     createPage({
       path,
       component: docTemplate,
       context: {
         currentPath: path,
+        anchorList,
         content,
         menuList,
       },
