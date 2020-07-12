@@ -4,7 +4,6 @@ import Img, { FluidObject } from "gatsby-image";
 import { Button } from 'antd';
 import simReactReduxImg from '../../../../images/sim-react-redux.png';
 import styles from './index.module.less';
-import config from '@config';
 
 interface IProps { }
 
@@ -16,7 +15,7 @@ const Footer: React.SFC<IProps> = (props) => {
         <h1 className={styles.title}>Sim React Redux</h1>
       </div>
       <h2 className={styles.subtitle}>Official React bindings for Redux</h2>
-      <Link to={`${config.PREFIX}/introduction/quick-start`}>
+      <Link to={`/introduction/quick-start`}>
         <Button
           className={styles.startBtn}
           type='primary'

@@ -1,9 +1,8 @@
 // @ts-check
 const { name } = require('../package.json');
-const PATH_PREFIX = process.env.RUNTIME_ENV === 'build' ? `/${name}` : '';
 
 module.exports = {
-  pathPrefix: PATH_PREFIX,
+  pathPrefix: `/${name}`,
   siteMetadata: {
     title: `Sim React Redux`,
     description: `简化版的 React Redux 咯 ~`,

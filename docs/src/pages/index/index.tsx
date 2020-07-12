@@ -10,7 +10,7 @@ interface IProps { }
 const IndexPage: React.SFC<IProps> = () => {
   return (
     <>
-      <SEO title="博客首页" />
+      <SEO title="Sim React Redux" />
       <Header />
       <Content />
       <Footer />
