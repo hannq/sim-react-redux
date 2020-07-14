@@ -156,8 +156,13 @@ export default Count01
 ```
 
 ## 在线编辑
+
+[![Edit sim-react-redux-demo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/sim-react-redux-demo-4iwz8?fontsize=14&hidenavigation=1&theme=dark)
+
 <iframe
-  src="https://stackblitz.com/edit/sim-react-redux?embed=1&file=index.tsx"
-  width="100%"
-  height="480"
+  src="https://codesandbox.io/embed/sim-react-redux-demo-4iwz8?fontsize=14&hidenavigation=1&theme=dark"
+  style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+  title="sim-react-redux-demo"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
